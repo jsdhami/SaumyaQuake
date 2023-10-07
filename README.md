@@ -9,6 +9,7 @@ Try out a demo of the map
 -link
 #Detailed Project Description 
 Moon Map
-This project produce the map of the moon depicting the seismic data from NASA Resources and exploring the lunar surface as well as it's topography.
+This project produce the map of the moon depicting the seismic data from NASA Resources which visualize the shallow moonquakes with ripple effect ,it's location and magnitude and exploring the lunar surface as well as it's topography.
+
 
 https://moonquake.jsdhami.com.np/
