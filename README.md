@@ -29,7 +29,7 @@ When you first open the website you will be welcomed with the guesture of View M
 
 #What benefits does it have?
 
-Our project tackles the challenge by providing the solution about 3D interface for users to visualize the seismic activity in the moon and more about the moonquakes that were occured in the specific location. Users can depict the location through longitude and latitude grids. They can also visualize the topography of lunar surface,day and night in the moon, 
+Our project tackles the challenge by providing the solution about 3D interface for users to visualize the seismic activity in the moon and more about the moonquakes that were occured in the specific location. Users can depict the location through longitude and latitude grids. They can also visualize the topography of lunar surface,day and night in the moon.
 
  
 
