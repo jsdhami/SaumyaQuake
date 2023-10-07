@@ -25,10 +25,10 @@ The tool provides easy-to-use functions to display various items on the map, enh
 Upon opening the website, users are greeted with the option to view the Moonquake 2.0 template. Clicking on this option initiates an incredible scientific journey within the main interface. Here, users have access to numerous parameters for adjusting the 3D visualization of the moon. It features:
 
 - Topography
-- Longitude & Latitude
+- Meridian For Longitude 
 - Luminar Landing
-- Phase and Liberation
-- Nakamura Show
+- Real Time Moon 
+- Explore Nakamura
 - Danger Zone
 
 Users can switch between these features through toggle buttons in the main interface. The "Danger Zone" feature helps users predict the effect and danger during lunar missions, while "Nakamura Show" allows visualization of Moonquakes based on different time, date, magnitude, and location.
