@@ -1,46 +1,797 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <style> body { margin: 0; } </style>
-      
-        <script src="//unpkg.com/d3-array"></script>
-        <script src="//unpkg.com/d3-scale"></script>
-      
-        <script src="//unpkg.com/globe.gl"></script>
-        <!--<script src="../../dist/globe.gl.js"></script>-->
-      </head>
-      
-      <body>
-      <div id="globeViz"></div>
-      
-      <script>
-        const colorScale = d3.scaleOrdinal(['orangered', 'mediumblue', 'darkgreen', 'yellow']);
-      
-        const labelsTopOrientation = new Set(['Apollo 12', 'Luna 2', 'Luna 20', 'Luna 21', 'Luna 24', 'LCROSS Probe']); // avoid label collisions
-      
-        const elem = document.getElementById('globeViz');
-        const moon = Globe()
-          .globeImageUrl('./lunar_surface.jpg')
-          .bumpImageUrl('./lunar_bumpmap.jpg')
-          .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-          .showGraticules(true)
-          .showAtmosphere(false) // moon has no atmosphere
-          .labelText('label')
-          .labelSize(1.7)
-          .labelDotRadius(0.4)
-          .labelDotOrientation(d => labelsTopOrientation.has(d.label) ? 'top' : 'bottom')
-          .labelColor(d => colorScale(d.agency))
-          .labelLabel(d => `
-              <div><b>${d.label}</b></div>
-              <div>${d.agency} - ${d.program} Program</div>
-              <div>Landing on <i>${new Date(d.date).toLocaleDateString()}</i></div>
-            `)
-          .onLabelClick(d => window.open(d.url, '_blank'))
-          (elem);
-      
-        fetch('./moon_landings.json').then(r => r.json()).then(landingSites => {
-          moon.labelsData(landingSites);
-        });
-      </script>
-      </body>
+
+<head>
+  <link href="r-moon.gif" rel="icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moonquake-2.0 | NASA Space App Challanges</title>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
+
+  <script src="https://unpkg.com/globe.gl@2.30.0/dist/globe.gl.js"></script>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/three@0.127.0/build/three.min.js"></script> -->
+  <script src="//unpkg.com/d3-array"></script>
+  <script src="//unpkg.com/d3-scale"></script>
+  <script src="//unpkg.com/globe.gl"></script>
+  <script src="//unpkg.com/d3"></script>
+  <!--<script src="../../dist/globe.gl.js"></script>-->
+  <link rel="stylesheet" href="./css/style.css">
+
+
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-opacity-10 mb-2">
+    <div class="container-fluid mx-2">
+      <a class="navbar-brand" href="/app">
+        <h3 class="mb-0" style="color: #ffffff ;"><b>MOONQUAKE-2.0</b></h3>
+      </a>
+      <button class="navbar-toggler  align-content-lg-end border-white bg-gradient btn-close-white text-white"
+        type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <br>
+        <br>
+        <ul class="navbar-nav me-2 mb-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html" style="color: white;">HOME</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#documentation" aria-current="page"
+              href="#" style="color: white;">DOCs</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#reference" href="#"
+              style="color: white;">REFRENCES</a>
+          </li>
+
+        </ul>
+        <button class="btn btn-primary" type="button" aria-current="page" style="color: white;" class="btn btn-primary"
+          data-bs-toggle="modal" data-bs-target="#contact">CONTACT US</button>
+      </div>
+    </div>
+  </nav>
+  <div id="globeViz" style="width: 100%;">
+
+  </div>
+
+
+  <!-- Modal for Documentation -->
+  <div class="modal fade bg-opacity-10 " id="documentation" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered  ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">DOCUMENTATION OF MOONQUAKE BY MOON QUAKE TEAM</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-dark-subtle">
+          <!-- the slide page size h = 10 inch   w=21.5 inch -->
+          <iframe width="100%" height="550"
+            src="https://docs.google.com/presentation/d/e/2PACX-1vQ_X18WA1yvuiGiAqg98CKiX4zmMLugCBOhAJqFvyIAosWFIxkJ-o33ZEOekWl4ecQXQDqZAoVa-20F/embed?start=true&loop=true&delayms=3000"
+            frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- model end for Documentation -->
+
+
+
+  <!-- Modal for reference -->
+  <div class="modal fade" id="reference" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">REFERENCES OF DATA</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-dark-subtle">
+
+
+
+
+          <!-- list references -->
+          <div class="row">
+            <div class="col-4">
+              <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
+                  href="#list-home" role="tab" aria-controls="list-home">Home</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
+                  href="#list-profile" role="tab" aria-controls="list-profile">Profile</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list"
+                  href="#list-messages" role="tab" aria-controls="list-messages">Messages</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
+                  href="#list-settings" role="tab" aria-controls="list-settings">Settings</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
+                  href="#list-settings" role="tab" aria-controls="list-settings">Settings</a>
+              </div>
+            </div>
+
+            <div class="col-8">
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae vero tempora eos fugit dolor, at, itaque
+                  magni, sapiente corporis eius architecto a ab illum. Repellendus officiis animi quidem itaque
+                  dignissimos?</div>
+                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...
+                </div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...
+                </div>
+                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+
+
+          <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum officiis unde
+              saepe voluptas omnis, placeat voluptate repudiandae quia totam vero error iusto facere et, quas vitae
+              quaerat. Fuga, repudiandae nesciunt.</li>
+            <li class="list-group-item">A list item</li>
+            <li class="list-group-item">A list item</li>
+          </ol>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- model end for reference -->
+
+  <!-- nakamura datas -->
+
+  <!-- test -->
+  <!-- 
+<div id="nakamura"
+style="position:absolute; top:55px; z-index:20; width:400px; background-color: rgba(0, 0, 0, 0.7); text-align:center;">
+<h1 style="font-size: 30px; font-weight: bold; color: white; text-align: center; margin: 8px 0 8px 0;">Nakamura
+  Seismic Events</h1>
+<div id="naklabels" style="text-align: center; margin-top: 10px; height: 70vh; overflow: scroll;">
+  <div nakNum="0" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1971, 17 April</h3>
+  </div>
+
+  <div nakNum="1" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1971, 20 May</h3>
+  </div>
+
+  <div nakNum="2" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1971, 11 July</h3>
+  </div>
+
+  <div nakNum="3" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1972, 2 January</h3>
+  </div>
+
+  <div nakNum="4" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1972, 17 September</h3>
+  </div>
+
+  <div nakNum="5" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1972, 06 December</h3>
+  </div>
+
+  <div nakNum="6" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1972, 09 December</h3>
+  </div>
+
+  <div nakNum="7" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1973, 08 February</h3>
+  </div>
+
+  <div nakNum="8" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1973, 13 March</h3>
+  </div>
+
+  <div nakNum="9" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1973, 20 June</h3>
+  </div>
+
+  <div nakNum="10" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1973, 01 October</h3>
+  </div>
+
+  <div nakNum="11" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1974, 23 February</h3>
+  </div>
+
+  <div nakNum="12" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1974, 27 March</h3>
+  </div>
+
+  <div nakNum="13" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1974, 19 April</h3>
+  </div>
+
+  <div nakNum="14" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1974, 29 May</h3>
+  </div>
+
+  <div nakNum="15" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1974, 11 July</h3>
+  </div>
+
+  <div nakNum="16" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1975, 03 January</h3>
+  </div>
+
+  <div nakNum="17" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1975, 12 January</h3>
+  </div>
+
+  <div nakNum="18" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1975, 13 January</h3>
+  </div>
+
+  <div nakNum="19" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1975, 13 February</h3>
+  </div>
+
+  <div nakNum="20" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1975, 07 May</h3>
+  </div>
+
+  <div nakNum="21" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1975, 27 May</h3>
+  </div>
+
+  <div nakNum="22" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1975, 10 November</h3>
+  </div>
+
+  <div nakNum="23" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1976, 04 January</h3>
+  </div>
+
+  <div nakNum="24" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1976, 12 January</h3>
+  </div>
+
+  <div nakNum="25" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1976, 06 March</h3>
+  </div>
+
+  <div nakNum="26" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1976, 08 March</h3>
+  </div>
+
+  <div nakNum="27" style="margin: 20px 0px;">
+    <h3 class="nakEvent">1976, 16 May</h3>
+  </div>
+
+</div>
+<button id="clearMap">Clear Map</button>
+
+</div> -->
+
+  <!-- <style>
+
+.nakEvent {
+    border-radius: 5px;
+    border: 2px solid white;
+    padding: 4px 8px 4px 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 265px;
+    margin: 0 auto;
+    font-size: 24px;
+    color: white;
+}
+
+.nakEvent:hover {
+
+    background-color: rgba(192, 192, 192, 0.6);
+}
+
+.mainLabel {
+
+    position: absolute;
+    z-index: 30;
+    top:15px;
+    width: 100%;
+
+}
+
+.labelStyle {
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    color: white
+}
+
+#clearMap {
+    text-align: center;
+    background-color: black;
+    border-radius: 5px;
+    border: 1px solid white;
+    color: white;
+    font-size: 22px;
+}
+</style>
+ -->
+
+  <!-- test end -->
+
+
+  <!-- nakamura datas -->
+
+
+  <!-- left side menu start -->
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel"
+    style="position:absolute; z-index:20; top: 70px; bottom:70px; left: 1px; width:30%; background-color:transparent; border-color:transparent ">
+    <!-- <div class="row">
+      <div class="col text-white text-center mt-2" >
+        <h4>Moonquake Events With Time</h4>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="col">
+        <select id="selectYear" class="form-select bg-black  mt-2 text-white" aria-label="Default select example">
+          <option selected>Year</option>
+
+        </select>
+      </div>
+
+      <!-- 
+      <div class="col ">
+         <select id="SelectMonth" class="form-select bg-black  mt-2 text-white" aria-label="Default select example">
+          <option selected>Month</option>
+      </div> -->
+      <div class="col">
+        <select id="selectDay" class="form-select bg-black small mt-2 text-white" aria-label="Default select example">
+          <option selected>Day</option>
+
+        </select>
+
+      </div>
+      <div class="col">
+        <button id="showButton" type="button" class="btn btn-primary mt-2">Apply</button>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- this is for the time line series -->
+
+  <!-- left top start -->
+  <!-- <div class="container bg-opacity-25 bg-black text-white  border border-light"
+    style="position:absolute; z-index:20; top: 80px; left:5px; width:250px;">
+    <p class="offcanvas-title mt-2"><b>MOONQUAKE DEVIATIONS:</b>
+    </p>
+    <div>
+      <p class="offcanvas-body mb-0">Year: 2019
+        <br>
+        Month: January
+        <br>
+        Day: 8th
+        <br>
+        Detected Time: 07:25:56
+        <br>
+        Location:
+      <ul class="mb-0 mt-0 mx-2">
+        Lagitude: 52.56
+      </ul>
+      <ul class="mb-0 mt-0 mx-2">
+        Longitude : -4.56
+      </ul>
+      Magnitude: Mw 7.1
+      <br>
+      Dicted By (Satation) : Apollo 11
+      </p>
+    </div>
+
+    <div class="row mb-1">
+      <div class="row mt-0 mx-1">TIMESTAMP FOR MOONQUAKE</div>
+      <div class="input-group">
+        <button class="btn btn-sm btn-primary" type="button" id="submtButton">Apply</button>
+        <input type="datetime-local" class="form-control" id="dateimePicker" aria-describedby="inputGroupFileAddon04"
+          aria-label="Upload">
+
+      </div>
+    </div>
+
+  </div> -->
+
+
+
+  <!-- left side menu end -->
+
+
+
+
+
+
+
+
+  <!-- right side details pupup -->
+  
+  <div class="container bg-opacity-25 bg-black text-white  border border-light"
+    style="position:absolute; z-index:20; top: 80px; right:5px; width:250px;">
+    <p class="offcanvas-title mt-2"><b>MOONQUAKE DETAILS:</b>
+    </p>
+    <div>
+      <p class="offcanvas-body mb-0">Year: 2019
+        <br>
+        Month: January
+        <br>
+        Day: 8th
+        <br>
+        Detected Time: 07:25:56
+        <br>
+        Location:
+      <ul class="mb-0 mt-0 mx-2">
+        Lagitude: 52.56
+      </ul>
+      <ul class="mb-0 mt-0 mx-2">
+        Longitude : -4.56
+      </ul>
+      Magnitude: Mw 7.1
+      <br>
+      Dicted By (Satation) : Apollo 11
+      </p>
+    </div>
+    <!-- <div class="row mb-1">
+      <div class="row mt-0 mx-1">TIMESTAMP FOR MOONQUAKE</div>
+      <div class="input-group">
+        <button class="btn btn-sm btn-primary" type="button" id="submitButton">Apply</button>
+        <input type="datetime-local" class="form-control" id="datetimePicker" aria-describedby="inputGroupFileAddon04"
+          aria-label="Upload">
+
+      </div>
+    </div> -->
+
+
+
+  </div>
+
+  <!-- bottom button bar start -->
+
+  <!-- <div id="contdata" class="bg-opacity-10"
+    style="position:absolute; z-index:20; bottom:3px; width:100%; background-color:transparent;">
+    <div class="" style="text-align: center;">
+
+      <i type="button" class="btn text-white btn-outline-primary mt-2" data-bs-toggle="tooltip" data-bs-placement="top"
+        data-bs-title="Nakamura Show">
+
+        <img src="./img/icons/Nakamura.svg" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+          aria-controls="offcanvasScrolling" height="20px" width="20px" alt="Nakamura">
+
+
+      </i>
+
+      <i class="btn text-white btn-outline-primary mt-2" data-bs-toggle="tooltip" data-bs-placement="top"
+        data-bs-title="Location">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt"
+          viewBox="0 0 16 16">
+          <path
+            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        </svg>
+      </i>
+
+      <i id="tropob" class="btn text-white" data-bs-toggle="tooltip" data-bs-placement="top"
+        data-bs-title="Tropography Map">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-gear"
+          viewBox="0 0 16 16">
+          <path
+            d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+          <path
+            d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+        </svg>
+      </i>
+
+      <i id="lalb" class="btn text-white" data-bs-toggle="tooltip" data-bs-placement="top"
+        data-bs-title="Longitude & Lagitude">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-globe"
+          viewBox="0 0 16 16">
+          <path
+            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z" />
+        </svg>
+      </i>
+
+      <i id="landingb" class="btn text-white" data-bs-toggle="tooltip" data-bs-placement="top"
+        data-bs-title="Landing Sites">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-door"
+          viewBox="0 0 16 16">
+          <path
+            d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z" />
+        </svg>
+      </i>
+      <i class="btn text-white text-center" style="border-color: transparent;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cursor-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
+        </svg>
+      </i>
+
+
+
+
+    </div>
+  </div> -->
+
+
+  <!-- contact model start-->
+  <div class="modal" id="contact">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-body-tertiary bg-opacity-50">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Contact Us</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form action="" method="post" name="product" id="product">
+            <div class="mb-3">
+              <label for="name" class="form-label"><b>Name:</b></label>
+              <input type="text" class="form-control bg-body-tertiary bg-opacity-50" id="email"
+                placeholder="Enter Your Name" name="Name">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label"><b>Email:</b></label>
+              <input type="email" class="form-control bg-body-tertiary bg-opacity-50" id="pwd"
+                placeholder="Enter Your Email" name="Email">
+            </div>
+            <label for="comment"><b>Message:</b></label>
+            <textarea class="form-control bg-body-tertiary bg-opacity-50" rows="5" id="comment" name="Message"
+              placeholder="Write your message.."></textarea>
+
+            <br>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- left change map button group start -->
+  <div class="btn-group-vertical align-items-center" style="position:absolute; z-index:20; bottom:50px;" role="group"
+    aria-label="Vertical button group">
+    <i class="btn text-white btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title=" Go Back"
+      onclick="goBack()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-reply-all"
+        viewBox="0 0 16 16">
+        <path
+          d="M8.098 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.74 8.74 0 0 0-1.921-.306 7.404 7.404 0 0 0-.798.008h-.013l-.005.001h-.001L8.8 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L4.114 8.254a.502.502 0 0 0-.042-.028.147.147 0 0 1 0-.252.497.497 0 0 0 .042-.028l3.984-2.933zM9.3 10.386c.068 0 .143.003.223.006.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96v-.667z" />
+        <path
+          d="M5.232 4.293a.5.5 0 0 0-.7-.106L.54 7.127a1.147 1.147 0 0 0 0 1.946l3.994 2.94a.5.5 0 1 0 .593-.805L1.114 8.254a.503.503 0 0 0-.042-.028.147.147 0 0 1 0-.252.5.5 0 0 0 .042-.028l4.012-2.954a.5.5 0 0 0 .106-.699z" />
+      </svg>
+    </i>
+
+    <i type="button" id="rotateButton" class="btn text-white btn-outline-danger" data-bs-toggle="tooltip"
+      data-bs-placement="right" data-bs-title="Reload">
+      <svg id="rotateImage" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+        class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z" />
+        <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z" />
+      </svg>
+    </i>
+
+    <i id="tropo" class="btn text-white" data-bs-toggle="tooltip" data-bs-placement="right"
+      data-bs-title="Tropography Map">
+      <img height="20px" width="20px" src="./img/icons/tropography.svg" alt="Tropology Map">
+    </i>
+
+    <i id="lal" class="btn text-white" data-bs-toggle="tooltip" data-bs-placement="right"
+      data-bs-title="Longitude & Lagitude">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-globe"
+        viewBox="0 0 16 16">
+        <path
+          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z" />
+      </svg>
+    </i>
+
+
+    <i id="landing" class="btn text-white" data-bs-toggle="tooltip" data-bs-placement="right"
+      data-bs-title="Landing Sites">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt"
+        viewBox="0 0 16 16">
+        <path
+          d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      </svg>
+      <path
+        d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z" />
+      </svg>
+    </i>
+
+
+    <i class="btn text-white text-center" data-bs-toggle="tooltip" data-bs-placement="right"
+      data-bs-title="Active Sun Light">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-sun"
+        viewBox="0 0 16 16">
+        <path
+          d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+      </svg>
+    </i>
+  </div>
+
+
+
+  <!-- Right change map button group start -->
+  <div class="btn-group-vertical align-items-center" style="position:absolute; right: 1px; z-index:20; bottom:50px"
+    role="group" aria-label="Vertical button group">
+    <i type="button" class="btn text-white btn-primary" data-bs-toggle="tooltip" data-bs-placement="left"
+      data-bs-title="Naming">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pin-map-fill"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z" />
+        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
+      </svg>
+    </i>
+
+    <i class="btn " id="danger_zone" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Danger Zone"
+      style="color: red ;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+        class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+        <path
+          d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+      </svg>
+    </i>
+
+    <i class="btn text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-gear"
+        viewBox="0 0 16 16">
+        <path
+          d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+        <path
+          d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+      </svg>
+    </i>
+    <i class="btn text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-globe"
+        viewBox="0 0 16 16">
+        <path
+          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z" />
+      </svg>
+    </i>
+    <i class="btn text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-door"
+        viewBox="0 0 16 16">
+        <path
+          d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z" />
+      </svg>
+    </i>
+    <i class="btn text-white text-center" style="border-color: transparent;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cursor-fill"
+        viewBox="0 0 16 16">
+        <path
+          d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
+      </svg>
+    </i>
+  </div>
+
+  <!-- color for tropography -->
+  <div class="visually-hidden col" id="tropo_c"
+    style="position:absolute; right: 70px; z-index:20; bottom:43px; top:417px;">
+    <div class="row text-white">+1000m</div>
+    <div class="row">
+
+      <img style="height: 175px; width: 50px;" src="./height_c.png" alt="Height">
+
+    </div>
+    <div class="row text-white">-1000m</div>
+  </div>
+
+
+
+  <!-- left change map button group end -->
+
+
+
+
+
+
+
+  <!-- this is for moon map -->
+  <script src="./js/moon.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <!-- this is for reciving message from clints  -->
+  <script src="./js/message.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/button.js"></script>
+  <script src="./js/nakamura.js"></script>
+  <!-- adding the three js in our project -->
+  <script type="importmap">{
+    "imports": {
+        "three": "https://threejs.org/build/three.module.js",
+        "three/addons/": "https://threejs.org/examples/jsm/"
+    }
+}</script>
+
+</body>
+
 </html>
+
+<script type="text/babel" src="./js/nakamura.js"></script>
+<!-- <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+
+<script type="module" src="./js/three.js"></script>
+
+<script>
+  // Get the input element
+  var datetimeInput = document.getElementById('datetimePicker');
+
+  // Get the submit button element
+  var submitButton = document.getElementById('submitButton');
+
+  // Add a click event listener to the submit button
+  submitButton.addEventListener('click', function () {
+    // Get the value from the datetime-local input
+    var datetimeValue = datetimeInput.value;
+    // Do something with the datetime value (e.g., display it)
+    alert('Selected datetime: ' + datetimeValue);
+
+
+  });
+
+
+
+
+
+  // Function to fetch data for a specific date and time
+  function fetchDataForDateTime(datetimeValue) {
+    // Construct the URL with the dynamic date and time
+    const url = `https://svs.gsfc.nasa.gov/api/dialamoon/${datetimeValue}`;
+
+    // Fetch the JSON data
+    fetch(url)
+      .then((response) => {
+        // Check if the response status is OK (200)
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        // Parse the JSON response
+        return response.json();
+      })
+      .then((data) => {
+        // Handle the JSON data here
+        console.log(data);
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the fetch
+        console.error("Fetch error:", error);
+      });
+  }
+
+  fetchDataForDateTime(datetimeValue);
+</script>

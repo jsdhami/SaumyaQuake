@@ -1,0 +1,88 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { margin: 0; }
+  </style>
+
+  <script src="//unpkg.com/globe.gl"></script>
+</head>
+
+<body>
+  <div id="globeViz"></div>
+
+  <script>
+    const markerSvg = `<svg viewBox="-4 0 36 36">
+      <path fill="currentColor" d="M14,0 C21.732,0 28,5.641 28,12.6 C28,23.963 14,36 14,36 C14,36 0,24.064 0,12.6 C0,5.641 6.268,0 14,0 Z"></path>
+      <circle fill="black" cx="14" cy="14" r="7"></circle>
+    </svg>`;
+
+    // Replace the random data with your JSON data
+    const jsonData = [
+      {
+        "label": "Marker 1",
+        "lat": 48,
+        "lng": 35,
+        "mag": 2.8,
+        "date": "1971-04-17"
+      },
+      {
+        "label": "Marker 2",
+        "lat": 42,
+        "lng": -24,
+        "mag": 2,
+        "date": "1971-05-20"
+      },
+      // Add more JSON data here...
+    ];
+
+    Globe()
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .htmlElementsData(jsonData)
+      .htmlElement(d => {
+        const el = document.createElement('div');
+        el.innerHTML = markerSvg;
+        el.style.color = 'blue'; // You can set the color based on your data
+        el.style.width = `${7 + d.mag * 3}px`; // Adjust marker size based on magnitude
+
+        el.style['pointer-events'] = 'auto';
+        el.style.cursor = 'pointer';
+        el.onclick = () => console.info(d);
+        return el;
+      })
+      (document.getElementById('globeViz'));
+  </script>
+</body>
+</html>
+  -->
+
+
+  <!DOCTYPE html>
+<html>
+<head>
+    <title>Get datetime-local Input Value</title>
+</head>
+<body>
+    <label for="datetimePicker">Select a Date and Time:</label>
+    <input type="datetime-local" id="datetimePicker">
+
+    <button id="submitButton">Submit</button>
+
+    <script>
+        // Get the input element
+        var datetimeInput = document.getElementById('datetimePicker');
+
+        // Get the submit button element
+        var submitButton = document.getElementById('submitButton');
+
+        // Add a click event listener to the submit button
+        submitButton.addEventListener('click', function () {
+            // Get the value from the datetime-local input
+            var datetimeValue = datetimeInput.value;
+
+            // Do something with the datetime value (e.g., display it)
+            alert('Selected datetime: ' + datetimeValue);
+        });
+    </script>
+</body>
+</html>

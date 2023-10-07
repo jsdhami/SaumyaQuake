@@ -1,0 +1,33 @@
+{
+    "image": {
+        "url": "https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005048/frames/730x730_1x1_30p/moon.6056.jpg",
+        "filename": "frames/730x730_1x1_30p/moon.6056.jpg",
+        "media_type": "Image",
+        "alt_text": "An image of the moon, as it would appear on 2023-09-10 07:00:00+00:00. (Frame: 6056)",
+        "width": 730,
+        "height": 730,
+        "pixels": 532900
+    },
+    "image_highres": {
+        "url": "https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005048/frames/5760x3240_16x9_30p/fancy/comp.6056.tif",
+        "filename": "frames/5760x3240_16x9_30p/fancy/comp.6056.tif",
+        "media_type": "Image",
+        "alt_text": "An image of the moon, as it would appear on 2023-09-10 07:00:00+00:00. (Frame: 6056)",
+        "width": 5760,
+        "height": 3240,
+        "pixels": 18662400
+    },
+    "time": "2023-09-10T07:00",
+    "phase": 19.5,
+    "obscuration": 0.0,
+    "age": 24.89,
+    "diameter": 1775.0,
+    "distance": 403787.0,
+    "j2000_ra": 7.8576,
+    "j2000_dec": 26.2264,
+    "subsolar_lon": -123.458,
+    "subsolar_lat": 0.978,
+    "subearth_lon": 4.303,
+    "subearth_lat": -6.744,
+    "posangle": 10.789
+}
