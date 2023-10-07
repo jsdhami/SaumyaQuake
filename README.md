@@ -60,6 +60,8 @@ Moonquake Map 2.0 offers several benefits:
 - d3 open-source library
 - React
 - JSON/CSV data format
+- Plot Library
+- Python Pandas Library 
 
 ## Project Source Code
 
