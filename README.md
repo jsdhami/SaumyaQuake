@@ -4,7 +4,7 @@
 
 A Moonquake Map for Public inorder to visualize the seismic data and informative data about the moonquakes and the moon.
 
-##About
+About
 
 This project is created as solution to tackle NASA International Space App Challenge 2023.
 For more information please refer to our team site:
