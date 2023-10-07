@@ -6,7 +6,7 @@
 
 Moonquake Map 2.0 is a project developed for the NASA International Space App Challenge 2023. It's an interactive map that allows the public to visualize seismic data and informative details about moonquakes and the lunar surface.
 
-For more information, please visit our team site: [Link to Team Site](your-team-site-link)
+For more information, please visit our team site: [Link to Team Site]([your-team-site-link](https://www.spaceappschallenge.org/2023/find-a-team/saumya-quake/))
 
 Try out a demo of the map here: [Moonquake Map Demo](https://moonquake.jsdhami.com.np)
 
