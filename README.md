@@ -17,7 +17,8 @@ The tool provides easy to use function to display various items on map.
 
 How does it work?
 
-When you first open the website 
+When you first open the website you will be welcomed with the guesture of View Moonquake-2.0 box. After clicking on it you will be starting the incredible and scientific journey in the main interface. Here you will find many parameters for adjusting which helps you to visualize the moon in 3D form.
+
 
 
 
