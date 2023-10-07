@@ -23,13 +23,13 @@ The tool provides easy-to-use functions to display various items on the map, enh
 
 ## How It Works
 
-Upon opening the website, users are greeted with the option to view the Moonquake 2.0 template. Clicking on this option initiates an incredible scientific journey within the main interface. Here, users have access to numerous parameters for adjusting the 3D visualization of the moon.It's features -
--Topography
--Longitude & Latitude
--Luminar Landing 
--Phase and Liberation 
--Nakamura Show 
--Danger Zone
+Upon opening the website, users are greeted with the option to view the Moonquake 2.0 template. Clicking on thi### option initiates an incredible scientific journey within the main interface. Here, users have access to numerous parameters for adjusting the 3D visualization of the moon. It's features:
+### Topography
+### Longitude & Latitude
+### Luminar Landing 
+### Phase and Liberation 
+### Nakamura Show 
+### Danger Zone
 Above feature will be opened through the various toggle button given in the main interface.We have added flexibility for the users to switch between those features.Danger Zone feature helps the user to predict the effect and it's danger during the lunar missons. Through Nakamura Show they can visualize the Moonquakes occur in different time ,date , magnitude and location.
 
 
