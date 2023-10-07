@@ -20,7 +20,7 @@ This project produce the map of the moon depicting the seismic data from NASA Re
 
 The map frontend was developed through bootstrap and for globe Globe.Gl JavaScript library which is based on Three.js, and d3 open source library. Other tools like react and Json/csv/ data type is used. 
 
-The tool provides easy to use function to display various items on map.
+The tool provides easy way  to use function to display various items on map.
 
 #How does it work?
 
