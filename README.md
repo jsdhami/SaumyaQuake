@@ -1,11 +1,8 @@
-# Saumya Quake Project
-
 # Moonquake Map 2.0
 
-=======
 ## About
 
-Moonquake Map 2.0 is a project developed as a solution for the NASA International Space App Challenge 2023. This interactive map allows the public to visualize seismic data and informative details about moonquakes and the lunar surface.
+Moonquake Map 2.0 is a project developed for the NASA International Space App Challenge 2023. It's an interactive map that allows the public to visualize seismic data and informative details about moonquakes and the lunar surface.
 
 For more information, please visit our team site: [Link to Team Site](your-team-site-link)
 
@@ -23,15 +20,16 @@ The tool provides easy-to-use functions to display various items on the map, enh
 
 ## How It Works
 
-Upon opening the website, users are greeted with the option to view the Moonquake 2.0 template. Clicking on thi### option initiates an incredible scientific journey within the main interface. Here, users have access to numerous parameters for adjusting the 3D visualization of the moon. It's features:
-### Topography
-### Longitude & Latitude
-### Luminar Landing 
-### Phase and Liberation 
-### Nakamura Show 
-### Danger Zone
-Above feature will be opened through the various toggle button given in the main interface.We have added flexibility for the users to switch between those features.Danger Zone feature helps the user to predict the effect and it's danger during the lunar missons. Through Nakamura Show they can visualize the Moonquakes occur in different time ,date , magnitude and location.
+Upon opening the website, users are greeted with the option to view the Moonquake 2.0 template. Clicking on this option initiates an incredible scientific journey within the main interface. Here, users have access to numerous parameters for adjusting the 3D visualization of the moon. It features:
 
+- Topography
+- Longitude & Latitude
+- Luminar Landing
+- Phase and Liberation
+- Nakamura Show
+- Danger Zone
+
+Users can switch between these features through toggle buttons in the main interface. The "Danger Zone" feature helps users predict the effect and danger during lunar missions, while "Nakamura Show" allows visualization of Moonquakes based on different time, date, magnitude, and location.
 
 ## Benefits
 
@@ -47,23 +45,29 @@ Moonquake Map 2.0 offers several benefits:
 
 - **Day and Night Visualization**: Users can also visualize day and night on the moon, adding an extra layer of exploration.
 
-## What do you hope to achieve ?
+## What do you hope to achieve?
 
-We hope our project may create a great impact on innovation, creativity, critical thinking, data visualization and inspiration field among the new generation and present students and researchers about the lunar surface and Moonquakes. This helps to create a interest to know more about space and science. As every student and researcher are keen to learn about the new things and their impact on daily life. This app also solves the problem about the data visualization of different seismic activity on lunar surface as it is vizulazied in 3D Moon with salient features.
+We hope our project may create a great impact on innovation, creativity, critical thinking, data visualization, and inspiration among the new generation, students, and researchers about the lunar surface and Moonquakes. This helps create an interest in learning more about space and science, fostering curiosity and exploration. The app also addresses the challenge of visualizing different seismic activities on the lunar surface in 3D.
 
-## Tools Used To Develop the Project 
+## Tools Used To Develop the Project
 
-
-
+- Bootstrap
+- Globe.Gl JavaScript library (Three.js based)
+- d3 open-source library
+- React
+- JSON/CSV data format
 
 ## Project Source Code
-Link to the project: GitHub
+
+Link to the project: [GitHub](link-to-github)
 
 ## Space Agency Data
+
 NASA PDS Data
 
-
 ## Reference
+
+[Include any references or citations here if applicable]
 
 
 
