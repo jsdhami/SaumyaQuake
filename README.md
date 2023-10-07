@@ -62,6 +62,7 @@ Moonquake Map 2.0 offers several benefits:
 - JSON/CSV data format
 - Plot Library
 - Python Pandas Library 
+- Obspy
 
 ## Project Source Code
 
