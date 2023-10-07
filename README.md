@@ -23,4 +23,4 @@ When you first open the website
 
 https://github.com/jsdhami/SaumyaQuake
 
-https://moonquake.jsdhami.com.np/
+https://moonquake.jsdhami.com.np
