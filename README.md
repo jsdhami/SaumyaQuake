@@ -1,37 +1,64 @@
 # Saumya Quake Project
 
-#Moonquake Map 2.0
 
-A Moonquake Map for Public inorder to visualize the seismic data and informative data about the moonquakes and the moon.
+# Moonquake Map 2.0
 
-About
+## About
 
-This project is created as solution to tackle NASA International Space App Challenge 2023.
-For more information please refer to our team site:
--link
-Try out a demo of the map
-https://moonquake.jsdhami.com.np
+Moonquake Map 2.0 is a project developed as a solution for the NASA International Space App Challenge 2023. This interactive map allows the public to visualize seismic data and informative details about moonquakes and the lunar surface.
 
-#Detailed Project Description 
+For more information, please visit our team site: [Link to Team Site](your-team-site-link)
 
-Moon Map
+Try out a demo of the map here: [Moonquake Map Demo](https://moonquake.jsdhami.com.np)
 
-This project produce the map of the moon depicting the seismic data from NASA Resources which visualize the shallow moonquakes with ripple effect ,it's location and magnitude and exploring the lunar surface as well as it's topography. The Apollo landing location and other moon mission data are also displayed for reference.
+## Detailed Project Description
 
-The map frontend was developed through bootstrap and for globe Globe.Gl JavaScript library which is based on Three.js, and d3 open source library. Other tools like react and Json/csv/ data type is used. 
+### Moon Map
 
-The tool provides easy way  to use function to display various items on map.
+Moonquake Map 2.0 generates a detailed map of the moon that displays seismic data obtained from NASA resources. It visualizes shallow moonquakes with a ripple effect, showing their location and magnitude. Additionally, the map explores the lunar surface's topography and marks important locations, such as the Apollo landing sites and other moon mission data, for reference.
 
-#How does it work?
+The map's frontend was developed using Bootstrap and leverages the Globe.Gl JavaScript library based on Three.js, along with the d3 open-source library. Other tools, including React and data in JSON/CSV format, were utilized to create an interactive and informative interface.
 
-When you first open the website you will be welcomed with the guesture of View Moonquake-2.0 template. After clicking on it you will be starting the incredible and scientific journey in the main interface. Here you will find many parameters for adjusting which helps you to visualize the moon in 3D form.
+The tool provides easy-to-use functions to display various items on the map, enhancing the user's experience.
 
+## How It Works
 
-#What benefits does it have?
+Upon opening the website, users are greeted with the option to view the Moonquake 2.0 template. Clicking on this option initiates an incredible scientific journey within the main interface. Here, users have access to numerous parameters for adjusting the 3D visualization of the moon.
 
-Our project tackles the challenge by providing the solution about 3D interface for users to visualize the seismic activity in the moon and more about the moonquakes that were occured in the specific location. Users can depict the location through longitude and latitude grids. They can also visualize the topography of lunar surface,day and night in the moon.
+## Benefits
 
- 
+Moonquake Map 2.0 offers several benefits:
+
+- **Seismic Activity Visualization**: Users can explore seismic activity on the moon, visualizing moonquakes in specific locations with detailed information.
+
+- **Lunar Topography**: The map provides insights into the lunar surface's topography, enhancing our understanding of the moon's geography.
+
+- **Reference Data**: Important historical moon mission data, such as Apollo landing sites, is readily available for reference.
+
+- **User-Friendly Interface**: The tool's interface is user-friendly and allows users to adjust various parameters for a customized experience.
+
+- **Day and Night Visualization**: Users can also visualize day and night on the moon, adding an extra layer of exploration.
+
+## Installation and Usage
+
+[Include installation instructions and usage guidelines here if applicable]
+
+## Contributions
+
+[Explain how others can contribute to your project if desired]
+
+## License
+
+[Specify the license under which your project is released, if applicable]
+
+## Contact
+
+[Provide contact information for your team or project lead]
+
+## Acknowledgments
+
+[List any acknowledgments, credits, or references to libraries/tools used in your project]
+
 
 
 
