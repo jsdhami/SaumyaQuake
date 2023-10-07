@@ -23,7 +23,15 @@ The tool provides easy-to-use functions to display various items on the map, enh
 
 ## How It Works
 
-Upon opening the website, users are greeted with the option to view the Moonquake 2.0 template. Clicking on this option initiates an incredible scientific journey within the main interface. Here, users have access to numerous parameters for adjusting the 3D visualization of the moon.
+Upon opening the website, users are greeted with the option to view the Moonquake 2.0 template. Clicking on this option initiates an incredible scientific journey within the main interface. Here, users have access to numerous parameters for adjusting the 3D visualization of the moon.It's features -
+-Topography
+-Longitude & Latitude
+-Luminar Landing 
+-Phase and Liberation 
+-Nakamura Show 
+-Danger Zone
+Above feature will be opened through the various toggle button given in the main interface.We have added flexibility for the users to switch between those features.Danger Zone feature helps the user to predict the effect and it's danger during the lunar missons. Through Nakamura Show they can visualize the Moonquakes occur in different time ,date , magnitude and location.
+
 
 ## Benefits
 
@@ -39,25 +47,25 @@ Moonquake Map 2.0 offers several benefits:
 
 - **Day and Night Visualization**: Users can also visualize day and night on the moon, adding an extra layer of exploration.
 
-## Installation and Usage
+## What do you hope to achieve ?
 
-[Include installation instructions and usage guidelines here if applicable]
+We hope our project may create a great impact on innovation, creativity, critical thinking, data visualization and inspiration field among the new generation and present students and researchers about the lunar surface and Moonquakes. This helps to create a interest to know more about space and science. As every student and researcher are keen to learn about the new things and their impact on daily life. This app also solves the problem about the data visualization of different seismic activity on lunar surface as it is vizulazied in 3D Moon with salient features.
 
-## Contributions
+## Tools Used To Develop the Project 
 
-[Explain how others can contribute to your project if desired]
 
-## License
 
-[Specify the license under which your project is released, if applicable]
 
-## Contact
+## Project Source Code
+Link to the project: GitHub
 
-[Provide contact information for your team or project lead]
+## Space Agency Data
+NASA PDS Data
 
-## Acknowledgments
 
-[List any acknowledgments, credits, or references to libraries/tools used in your project]
+## Reference
+
+
 
 
 
