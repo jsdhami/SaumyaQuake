@@ -51,7 +51,7 @@ Moonquake Map 2.0 offers several benefits:
 
 ## What do you hope to achieve?
 
-We hope our project may create a great impact on innovation, creativity, critical thinking, data visualization, and inspiration among the new generation, students, and researchers about the lunar surface and Moonquakes. This helps create an interest in learning more about space and science, fostering curiosity and exploration. The app also addresses the challenge of visualizing different seismic activities on the lunar surface in 3D.
+"Our project is a catalyst for innovation, igniting the flames of creativity and critical thinking. Through captivating data visualization, we aim to inspire the next generation of students and researchers to embark on a journey of lunar discovery, unveiling the mysteries of the Moon's surface and the enigmatic Moonquakes. Our app serves as a gateway to the cosmos, cultivating curiosity and nurturing the spirit of exploration. Moreover, it conquers the challenge of rendering lunar seismic activities in breathtaking 3D, making the lunar landscape come alive before your eyes."
 
 ## Tools Used To Develop the Project
 
