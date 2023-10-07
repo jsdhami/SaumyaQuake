@@ -17,6 +17,55 @@ const elem = document.getElementById("globeViz");
 // this is for nakamura data to be globally
 let nakaData = [];
 
+// these are for data plot
+let years = ['1969', '1970', '1971', '1972', '1973', '1974', '1975', '1976', '1977'];
+let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+document.getElementById('yearslider').addEventListener('input', (event) => {
+
+  document.getElementById('yearlabel').innerText = years[event.target.value];
+
+  let curYear = parseInt(event.target.value) + 1969;
+
+  let currMonth = parseInt(document.getElementById('monthslider').value);
+
+  let date = new Date(curYear, currMonth+1, 0);
+
+  let dayslider = document.getElementById('dayslider');
+
+  dayslider.setAttribute('max', date.getDate());
+  dayslider.value = 1;
+  document.getElementById('daylabel').innerText = 1;
+
+});
+
+document.getElementById('monthslider').addEventListener('input', (event) => {
+
+
+  document.getElementById('monthlabel').innerText = months[event.target.value];
+
+  let curYear = parseInt(document.getElementById('yearslider').value) + 1969;
+  
+  let currMonth = parseInt(document.getElementById('monthslider').value);
+
+  let date = new Date(curYear, currMonth+1, 0);
+
+  let dayslider = document.getElementById('dayslider');
+
+  dayslider.setAttribute('max', date.getDate());
+  dayslider.value = 1;
+  document.getElementById('daylabel').innerText = 1;
+
+});
+
+document.getElementById('dayslider').addEventListener('input', (event) => {
+  document.getElementById('daylabel').innerText = event.target.value;
+  
+});
+// this is for graph data 
+
+
+
+
 
 
 
@@ -114,7 +163,6 @@ function start() {
       });
 
 
-
     (
   
      elem
@@ -134,8 +182,7 @@ function start() {
    .then(data => moon.heatmapsData([data]));
    
    // danger zone end
-   
-      
+         
 
    // Update the state variable
    isdanger = false;
@@ -150,7 +197,7 @@ function start() {
    
   
       // danger zone fetch data
-     fetch('./danger_zone.csv').then(res => res.text())
+     fetch('./nakamura_1979_sm_locations.json').then(res => res.text())
      .then(csv => d3.csvParse(csv, ({ lat, lng, pop }) => ({ lat: +lat, lng: +lng, pop: +pop })))
      .then(data => moon.heatmapsData([data]));
      
