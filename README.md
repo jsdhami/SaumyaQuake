@@ -1,4 +1,5 @@
-# Moonquake Map 2.0 By Saumya Quake Team
+# Moonquake Map 2.0 By Saumya Quake Team 
+
 
 ## About
 
@@ -28,6 +29,8 @@ Step into the fascinating world of lunar exploration with the Moonquake 2.0 temp
 - Real Time Moon 
 - Explore Nakamura
 - Danger Zone
+- Deviation Graph
+- Interactive 3-D
 
 Within this captivating interface, you wield the power to control the 3D visualization of the moon like never before. Imagine adjusting the moon's topography, navigating along its meridian for longitude, witnessing a luminar landing, or even experiencing real-time lunar activity. The possibilities are as boundless as the cosmos itself.
 
@@ -71,8 +74,22 @@ Our project is a catalyst for innovation, igniting the flames of creativity and 
 Link to the project: [GitHub](link-to-github)
 
 ## Space Agency Data
+https://moon.nasa.gov/resources/13/apollo-11-seismic-experiment/
 
-NASA PDS Data
+https://history.nasa.gov/alsj/HamishALSEP.html
+
+https://trek.nasa.gov/moon/
+
+https://pds-geosciences.wustl.edu/missions/apollo/seismic_event_catalog.htm
+
+https://pds-geosciences.wustl.edu/missions/apollo/apollo_pse.htm
+
+https://www.esa.int/
+
+https://www.cnsa.gov.cn/english/n6465652/n6465653/index.html
+
+
+
 
 ## Reference
 
@@ -86,3 +103,8 @@ NASA PDS Data
 https://github.com/jsdhami/SaumyaQuake
 
 https://moonquake.jsdhami.com.np
+
+
+
+
+
