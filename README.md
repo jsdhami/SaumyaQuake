@@ -28,6 +28,8 @@ Step into the fascinating world of lunar exploration with the Moonquake 2.0 temp
 - Real Time Moon 
 - Explore Nakamura
 - Danger Zone
+- Deviation Graph
+- Interactive 3-D
 
 Within this captivating interface, you wield the power to control the 3D visualization of the moon like never before. Imagine adjusting the moon's topography, navigating along its meridian for longitude, witnessing a luminar landing, or even experiencing real-time lunar activity. The possibilities are as boundless as the cosmos itself.
 
