@@ -53,7 +53,7 @@ Moonquake Map 2.0 offers several benefits:
 
 - **User-Friendly Interface**: The tool's interface is user-friendly and allows users to adjust various parameters for a customized experience.
 
-- ** Real Time Moon**: Experience the Moon's current appearance as seen from our home planet. Watch the lunar landscape evolve in real time.
+- **Real Time Moon**: Experience the Moon's current appearance as seen from our home planet. Watch the lunar landscape evolve in real time.
 ## What do you hope to achieve?
 
 Our project is a catalyst for innovation, igniting the flames of creativity and critical thinking. Through captivating data visualization, we aim to inspire the next generation of students and researchers to embark on a journey of lunar discovery, unveiling the mysteries of the Moon's surface and the enigmatic Moonquakes. Our app serves as a gateway to the cosmos, cultivating curiosity and nurturing the spirit of exploration. Moreover, it conquers the challenge of rendering lunar seismic activities in breathtaking 3D, making the lunar landscape come alive before your eyes.
