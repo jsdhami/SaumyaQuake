@@ -89,7 +89,7 @@ https://www.esa.int/
 https://www.cnsa.gov.cn/english/n6465652/n6465653/index.html
 
 
-NASA PDS Data
+
 
 ## Reference
 
@@ -106,18 +106,5 @@ https://moonquake.jsdhami.com.np
 
 
 
-NASA PDS Data
 
-## Reference
-
-[Include any references or citations here if applicable]
-
-
-
-
-
-
-https://github.com/jsdhami/SaumyaQuake
-
-https://moonquake.jsdhami.com.np
 
