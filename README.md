@@ -20,6 +20,10 @@ Behind the scenes, our developers harnessed the power of Bootstrap, weaving a sl
 
 Discover the future of lunar exploration with Moonquake Map 2.0, where user-friendly functions make every interaction a delightful experience. Dive into a world of moonquakes, topography, and historic missions, all at your fingertips. Unlock the lunar wonders, one click at a time.
 
+![Saumya Quake Team](./Screenshot%202023-10-08%20125220.png))
+
+
+
 ## How does it work?
 
 Step into the fascinating world of lunar exploration with the Moonquake 2.0 template! As soon as you arrive on our website, you're presented with the enticing option to embark on an extraordinary scientific journey. With a simple click, you'll be transported into our immersive main interface, where the moon's mysteries unfold before your eyes. It's features:
@@ -41,6 +45,11 @@ And for the ultimate lunar experience, the 'Nakamura Show' lets you visualize Mo
 
 Are you ready to unlock the secrets of the moon? Join us on this incredible scientific voyage with the Moonquake app 2.0 – where the moon's wonders await your exploration.
 
+![Saumya Quake Team](./Screenshot%202023-10-08%20125220.png)
+
+
+
+
 ## Benefits
 
 Moonquake Map 2.0 offers several benefits:
@@ -58,6 +67,8 @@ Moonquake Map 2.0 offers several benefits:
 
 Our project is a catalyst for innovation, igniting the flames of creativity and critical thinking. Through captivating data visualization, we aim to inspire the next generation of students and researchers to embark on a journey of lunar discovery, unveiling the mysteries of the Moon's surface and the enigmatic Moonquakes. Our app serves as a gateway to the cosmos, cultivating curiosity and nurturing the spirit of exploration. Moreover, it conquers the challenge of rendering lunar seismic activities in breathtaking 3D, making the lunar landscape come alive before your eyes.
 
+
+![Saumya Quake Team](./portfolio-1.jpg)
 ## Tools Used To Develop the Project
 
 - Bootstrap
