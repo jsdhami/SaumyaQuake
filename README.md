@@ -1,4 +1,4 @@
-# Moonquake Map 2.0 By Saumya Quake Team
+# Moonquake Map 2.0 By Saumya Quake Team.
 
 ## About
 
