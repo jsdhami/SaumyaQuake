@@ -13,3 +13,22 @@
 
         // Event listener for the toggle button
         togglePopupButton.addEventListener('click', togglePopup);
+// this is
+
+
+
+ // Get references to the button and popup container
+ const GraphButton = document.getElementById('graphb');
+ const gImg = document.getElementById('graphimg');
+
+ // Function to toggle the popup visibility
+ function togglePopupD() {
+     if (gImg.style.display === 'none' || gImg.style.display === '') {
+        gImg.style.display = 'block';
+     } else {
+        gImg.style.display = 'none';
+     }
+ } 
+
+ // Event listener for the toggle button
+ GraphButton.addEventListener('click', togglePopupD);
