@@ -18,7 +18,7 @@ Behind the scenes, our developers harnessed the power of Bootstrap, weaving a sl
 
 Discover the future of lunar exploration with Moonquake Map 2.0, where user-friendly functions make every interaction a delightful experience. Dive into a world of moonquakes, topography, and historic missions, all at your fingertips. Unlock the lunar wonders, one click at a time.
 
-## How It Works
+## How does it work?
 
 Step into the fascinating world of lunar exploration with the Moonquake 2.0 template! As soon as you arrive on our website, you're presented with the enticing option to embark on an extraordinary scientific journey. With a simple click, you'll be transported into our immersive main interface, where the moon's mysteries unfold before your eyes. It's features:
 
