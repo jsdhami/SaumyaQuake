@@ -74,6 +74,7 @@ Our project is a catalyst for innovation, igniting the flames of creativity and 
 Link to the project: [GitHub](link-to-github)
 
 ## Space Agency Data
+Data collected from different resources are provided with the links.
 https://moon.nasa.gov/resources/13/apollo-11-seismic-experiment/
 
 https://history.nasa.gov/alsj/HamishALSEP.html
@@ -93,7 +94,7 @@ https://www.cnsa.gov.cn/english/n6465652/n6465653/index.html
 
 ## Reference
 
-[Include any references or citations here if applicable]
+
 
 
 
