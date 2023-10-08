@@ -4,7 +4,7 @@
 
 ## About
 
-Introducing Moonquake Map 2.0, a groundbreaking project developed for the NASA International Space App Challenge 2023. This innovative interactive map brings lunar seismic data and insightful information about moonquakes and the lunar surface right to the fingertips of the public. Explore the mysteries of the Moon like never before with this cutting-edge tool.
+Moonquake Map 2.0, a groundbreaking project developed for the NASA International Space App Challenge 2023. This innovative interactive map brings lunar seismic data and insightful information about moonquakes and the lunar surface right to the fingertips of the public. Explore the mysteries of the Moon like never before with this cutting-edge tool.
 
 Try out a demo of the map here: [Moonquake Map Demo](https://moonquake.jsdhami.com.np)
 ![Saumya Quake Team](.//portfolio-8.jpg)
@@ -12,7 +12,7 @@ Try out a demo of the map here: [Moonquake Map Demo](https://moonquake.jsdhami.c
 
 ### Moon Map
 
-Introducing Moonquake Map 2.0, your gateway to the lunar frontier like never before! This cutting-edge tool unlocks the mysteries of the Moon by generating an immersive and detailed map, unveiling seismic secrets straight from NASA's treasure trove of data.
+Moonquake Map 2.0, your gateway to the lunar frontier like never before! This cutting-edge tool unlocks the mysteries of the Moon by generating an immersive and detailed map, unveiling seismic secrets straight from NASA's treasure trove of data.
 
 Prepare to be captivated as Moonquake Map 2.0 showcases shallow moonquakes with mesmerizing ripple effects, vividly illustrating their location and magnitude. But that's not all – this extraordinary map takes you on a journey through the lunar landscape, unraveling its topography with precision. Explore the hallowed grounds of Apollo landing sites and other monumental lunar missions, all seamlessly integrated into this interactive masterpiece.
 
@@ -69,9 +69,6 @@ Our project is a catalyst for innovation, igniting the flames of creativity and 
 - Python Pandas Library 
 - Obspy
 
-## Project Source Code
-
-Link to the project: [GitHub](link-to-github)
 
 ## Space Agency Data
 Data used to make this app from different space agency are provided with the links.
