@@ -7,7 +7,7 @@
 Introducing Moonquake Map 2.0, a groundbreaking project developed for the NASA International Space App Challenge 2023. This innovative interactive map brings lunar seismic data and insightful information about moonquakes and the lunar surface right to the fingertips of the public. Explore the mysteries of the Moon like never before with this cutting-edge tool.
 
 Try out a demo of the map here: [Moonquake Map Demo](https://moonquake.jsdhami.com.np)
-
+![Saumya Quake Team](.//portfolio-8.jpg)
 ## Detailed Project Description
 
 ### Moon Map
@@ -94,6 +94,21 @@ https://www.cnsa.gov.cn/english/n6465652/n6465653/index.html
 
 
 ## Reference
+
+Data used to make this app from different space agency are provided with the links.
+https://moon.nasa.gov/resources/13/apollo-11-seismic-experiment/
+
+https://history.nasa.gov/alsj/HamishALSEP.html
+
+https://trek.nasa.gov/moon/
+
+https://pds-geosciences.wustl.edu/missions/apollo/seismic_event_catalog.htm
+
+https://pds-geosciences.wustl.edu/missions/apollo/apollo_pse.htm
+
+https://www.esa.int/
+
+https://www.cnsa.gov.cn/english/n6465652/n6465653/index.html
 
 
 
