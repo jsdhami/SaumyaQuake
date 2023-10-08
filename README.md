@@ -25,14 +25,14 @@ Step into the fascinating world of lunar exploration with the Moonquake 2.0 temp
 
 - Topography
 - Meridian For Longitude 
-- Luminar Landing
+- Lunar Landing
 - Real Time Moon 
 - Explore Nakamura
 - Danger Zone
 - Deviation Graph
 - Interactive 3-D
 
-Within this captivating interface, you wield the power to control the 3D visualization of the moon like never before. Imagine adjusting the moon's topography, navigating along its meridian for longitude, witnessing a luminar landing, or even experiencing real-time lunar activity. The possibilities are as boundless as the cosmos itself.
+Within this captivating interface, you wield the power to control the 3D visualization of the moon like never before. Imagine adjusting the moon's topography, navigating along its meridian for longitude, witnessing a lunar landing, or even experiencing real-time lunar activity. The possibilities are as boundless as the cosmos itself.
 
 But that's not all – our Moonquake app takes your lunar adventure to the next level. Toggle between different features effortlessly, from exploring Nakamura's secrets to delving into the 'Danger Zone' for mission preparation. Wondering how to predict the impact and hazards of lunar missions? The 'Danger Zone' feature has your back.
 
