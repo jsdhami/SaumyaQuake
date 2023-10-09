@@ -20,7 +20,6 @@ Behind the scenes, our developers harnessed the power of Bootstrap, weaving a sl
 
 Discover the future of lunar exploration with Moonquake Map 2.0, where user-friendly functions make every interaction a delightful experience. Dive into a world of moonquakes, topography, and historic missions, all at your fingertips. Unlock the lunar wonders, one click at a time.
 
-![Saumya Quake Team](./Screenshot%202023-10-08%20125220.png))
 
 
 
