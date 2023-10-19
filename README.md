@@ -1,5 +1,5 @@
 # Moonquake Map 2.0 By Saumya Quake Team 
-![Saumya Quake Team](./saumya%20logo.png)
+![Saumya Quake Team](./team_info.png)
 
 
 ## About
