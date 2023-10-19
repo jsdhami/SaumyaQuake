@@ -11,7 +11,7 @@ Moonquake Map 2.0, a groundbreaking project developed for the NASA International
 ## Setup in Local Device
 ### Clone the Project
 ```python
-git clone https://github.com/c2edev/SaumyaQuake.git
+git clone https://github.com/jsdhami/SaumyaQuake.git
 ````
 ```python
 cd SaumyaQuake
