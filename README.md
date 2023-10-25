@@ -1,14 +1,5 @@
 # Moonquake Map 2.0 By Saumya Quake Team 
 ![Saumya Quake Team](./team_info.png)
-<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  kofiWidgetOverlay.draw('jsdhami', {
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Support Us',
-    'floating-chat.donateButton.background-color': '#00b9fe',
-    'floating-chat.donateButton.text-color': '#fff'
-  });
-</script>
 
 ## About
 
