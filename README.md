@@ -1,6 +1,8 @@
 # Moonquake Map 2.0 By Saumya Quake Team 
 ![Saumya Quake Team](./team_info.png)
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W8QI3N3)
+
 ## About
 
 Moonquake Map 2.0, a groundbreaking project developed for the NASA International Space App Challenge 2023. This innovative interactive map brings lunar seismic data and insightful information about moonquakes and the lunar surface right to the fingertips of the public. Explore the mysteries of the Moon like never before with this cutting-edge tool.
