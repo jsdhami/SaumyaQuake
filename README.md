@@ -1,6 +1,8 @@
 # Moonquake Map 2.0 By Saumya Quake Team 
 ![Saumya Quake Team](./team_info.png)
 
+Visit: https://www.spaceappschallenge.org/2023/find-a-team/saumya-quake/
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W8QI3N3)
 
 ## About
